@@ -11,11 +11,11 @@
             </span>
             </a>
             <ul class="treeview-menu">
-                <li><a href="javascript:void()"><i class="fa fa-user mr-5"></i>My Profile </a></li>
-                <li><a href="javascript:void()"><i class="fa fa-money mr-5"></i>My Balance</a></li>
-                <li><a href="javascript:void()"><i class="fa fa-envelope-open mr-5"></i>Inbox</a></li>
-                <li><a href="javascript:void()"><i class="fa fa-cog mr-5"></i>Account Setting</a></li>
-                <li><a href="javascript:void()"><i class="fa fa-power-off mr-5"></i>Logout</a></li>
+                <li><a href="javascript:void(0)"><i class="fa fa-user mr-5"></i>My Profile </a></li>
+                <li><a href="javascript:void(0)"><i class="fa fa-money mr-5"></i>My Balance</a></li>
+                <li><a href="javascript:void(0)"><i class="fa fa-envelope-open mr-5"></i>Inbox</a></li>
+                <li><a href="javascript:void(0)"><i class="fa fa-cog mr-5"></i>Account Setting</a></li>
+                <li><a href="javascript:void(0)"><i class="fa fa-power-off mr-5"></i>Logout</a></li>
             </ul>
         </li>
         <li class="header nav-small-cap">PERSONAL</li>
