@@ -17,3 +17,5 @@ Route::get('/', function () {
 
 Route::get('dashboard','DashboardController@index')->name('admin.dashboard');
 Route::resource('category','CategoryController');
+Route::post('category/{id}/restore', 'CategoryController@restore')->name('category.restore');
+Route::delete('category/{id}/delete', 'CategoryController@delete')->name('category.delete');

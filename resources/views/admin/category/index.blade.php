@@ -1,0 +1,60 @@
+@extends('layouts.backend.master')
+@section('content')
+    <div class="row">
+        <div class="col-12">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h4 class="box-title">Search box</h4>
+                    <div class="box-controls pull-right">
+                        <a href="{{ route('category.create') }}" class="btn btn-info btn-sm pull-right">Add New</a>
+
+                    </div>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body no-padding">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                            @foreach($categories as $category)
+                                <tr>
+                                    <td>{{ $category->id }}</td>
+                                    <td>{{ $category->name }}</td>
+                                    <td><span class="label {{ ($category->status == 'active')?'label-info':'label-danger'}}">{{ $category->status }}</span></td>
+                                    <td>
+                                        @if($category->deleted_at == null)
+                                            <a href="{{ route('category.edit',$category->id) }}" class="btn btn-sm btn-info">Edit</a>
+                                            <form action="{{ route('category.destroy',$category->id) }}" method="post" style="display: inline">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you confirm to delete this category?')">Delete</button>
+                                            </form>
+                                        @else
+                                            <form action="{{ route('category.restore',$category->id) }}" method="post" style="display: inline">
+                                                @csrf
+                                                <button type="submit" class="btn btn-sm btn-warning" onclick="return confirm('Are you confirm to restore this category?')">Restore</button>
+                                            </form>
+                                            <form action="{{ route('category.delete',$category->id) }}" method="post" style="display: inline">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you confirm to permanent delete this category?')">Permanent Delete</button>
+                                            </form>
+                                        @endif
+
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </table>
+                    </div>
+                    {{ $categories->render() }}
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+    </div>
+@endsection

@@ -28,7 +28,8 @@
 
         <!-- Main content -->
         <section class="content">
-        @yield('content')
+            @include('layouts.backend._message')
+            @yield('content')
         <!-- /.row -->
         </section>
         <!-- /.content -->
