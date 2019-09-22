@@ -32,7 +32,7 @@
                             </tr>
                             @foreach($categories as $category)
                                 <tr>
-                                    <td>{{ $category->id }}</td>
+                                    <td>{{ $serial++ }}</td>
                                     <td>{{ $category->name }}</td>
                                     <td><span class="label {{ ($category->status == 'active')?'label-info':'label-danger'}}">{{ $category->status }}</span></td>
                                     <td>

@@ -26,6 +26,13 @@ class CategoryController extends Controller
         $category = $category->orderBy('id', 'DESC')->paginate(5);
         $data['categories'] = $category;
 
+        if (isset($request->status) || $request->search){
+          $render['status'] = $request->status;
+          $render['search'] = $request->search;
+          $category = $category->appends($render);
+        }
+
+        $data['serial'] = handlePagination($category);
         return view('admin.category.index', $data);
     }
 
