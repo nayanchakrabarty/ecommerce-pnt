@@ -27,6 +27,14 @@
             </span>
             </a>
         </li>
+        <li>
+            <a href="#">
+                <i class="fa fa-dashboard"></i> <span>Product</span>
+                <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+            </a>
+        </li>
         <li class="treeview">
             <a href="#">
                 <i class="fa fa-th"></i>
@@ -36,7 +44,8 @@
             </span>
             </a>
             <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-circle-thin"></i>Categories</a></li>
+                <li><a href="{{ route('category.index') }}"><i class="fa fa-circle-thin"></i>Categories</a></li>
+                <li><a href="{{ route('brand.index') }}"><i class="fa fa-circle-thin"></i>Brands</a></li>
 
             </ul>
         </li>
